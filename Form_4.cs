@@ -229,15 +229,18 @@ namespace Lab03_4
         #endregion
 
         #region C部分
+        //要素浏览
         private void menuFeatureBrowse_Click(object sender, EventArgs e)
         {
             BrowseFeatures();
         }
-        private void tlbFeatureBrowse_Click(object sender, EventArgs e)
+
+        private void tlbFeatureBrowse_Click_1(object sender, EventArgs e)
         {
             BrowseFeatures();
         }
-        // 公共浏览方法（核心逻辑）
+     
+        // 公共浏览方法
         private void BrowseFeatures()
         {
             // 复用仓库已有GetSelectedLayer()方法
@@ -260,7 +263,7 @@ namespace Lab03_4
             mapOp = MapOperatorType.IdentifyFeature;
             MessageBox.Show("请在地图上点击要素查看信息！", "提示");
         }
-        private void tlbFeatureIdentify_Click(object sender, EventArgs e)
+        private void tlbFeatureIdentify_Click_1(object sender, EventArgs e)
         {
             menuFeatureIdentify_Click(sender, e);
         }
@@ -271,6 +274,10 @@ namespace Lab03_4
             mapOp = MapOperatorType.EditFeatureByLocation;
             MessageBox.Show("请点击地图要素进行编辑！", "提示");
         }
+        private void tlbFeatureEditByLocation_Click_1(object sender, EventArgs e)
+        {
+            menuFeatureEditByLocation_Click(sender, e);
+        }
 
         //框选编辑
         private void menuFeatureEditByRectangle_Click(object sender, EventArgs e)
@@ -278,12 +285,13 @@ namespace Lab03_4
             mapOp = MapOperatorType.EditFeatureByRectangle;
             MessageBox.Show("请框选地图要素进行编辑！", "提示");
         }
-        private void tlbFeatureEditByLocation_Click(object sender, EventArgs e)
+
+        private void tlbFeatureEditByRectangle_Click(object sender, EventArgs e)
         {
-            menuFeatureEditByLocation_Click(sender, e);
+            menuFeatureEditByRectangle_Click(sender, e);
         }
 
-    
+        //要素编辑
         private void axMap_OnMouseDown(object sender, IMapControlEvents2_OnMouseDownEvent e)
         {
             IFeatureLayer selectedLayer = GetSelectedLayer() as IFeatureLayer;
@@ -313,6 +321,8 @@ namespace Lab03_4
             // 重置操作类型（避免冲突）
             mapOp = MapOperatorType.Default;
         }
+
+       
     }
     #endregion
 

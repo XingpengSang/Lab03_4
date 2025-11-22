@@ -53,6 +53,7 @@ namespace Lab03_4.MyForms
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnOK
             // 
@@ -62,6 +63,7 @@ namespace Lab03_4.MyForms
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "确认";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click_1);
             // 
             // FormEditFeature
             // 
